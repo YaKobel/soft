@@ -1,5 +1,5 @@
 from collections import Counter
-import json
+# import json
 
 text = "text1.txt"
 
@@ -11,17 +11,20 @@ text = "text1.txt"
 
 word_list = []
 
-some = input("Напишите текст для проверки: \n")
+with open(text, encoding='utf-8') as txt:
+    txt = txt.read()
 
 
-with open(text, 'w', encoding="utf-8") as f:
-    json.dump(some, f, ensure_ascii=False)
+# some = input("Напишите текст для проверки: \n")
 
-with open (text) as R:
-    read_text = json.load(R)
+# with open(text, 'w', encoding="utf-8") as f:
+#     json.dump(some, f, ensure_ascii=False)
+
+# with open (text) as R:
+#     read_text = json.load(R)
 
 
-for world in read_text.split():
+for world in txt.split():
     clear_world = ""
     for letter in world:
         if letter.isalpha():
